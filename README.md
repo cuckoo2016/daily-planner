@@ -60,8 +60,8 @@ npm run install:all
 
 | 角色 | 用户名 | 密码 |
 |---|---|---|
-| 管理员 | admin | admin123 |
-| 普通用户 | user | user123 |
+| 管理员 | admin | 123456 |
+| 普通用户 | user01 | 123456 |
 
 ## API 接口
 
