@@ -1,0 +1,593 @@
+/* ==================== 主题变量系统 - 业界最佳实践 ==================== */
+
+/* 浅色主题 (Light Mode) */
+:root {
+  --user-primary: #3d9b8c;
+  --user-primary-light: #4db5a5;
+  --user-primary-soft: rgba(61, 155, 140, 0.1);
+  --user-bg: #f6f8fa;
+  --user-card: #ffffff;
+  --user-card-hover: #f3f4f6;
+  --user-text: #1f2328;
+  --user-muted: #656d76;
+  --user-border: #d0d7de;
+  --user-border-soft: #eaeef2;
+  --user-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --user-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 深色主题 (Dark Mode) - GitHub / VS Code 专业中性灰风格 */
+html.dark {
+  color-scheme: dark;
+
+  /* 核心品牌色 - 稍微调亮 */
+  --user-primary: #4db5a5;
+  --user-primary-light: #5fc9b9;
+  --user-primary-soft: rgba(77, 181, 165, 0.15);
+
+  /* 多层级中性灰 - 专业耐看 */
+  --user-bg: #0d1117;          /* 最暗背景 */
+  --user-card: #161b22;        /* 卡片背景 */
+  --user-card-hover: #1f2937;    /* 悬停背景 */
+
+  /* 文字层级 - 柔和不刺眼 */
+  --user-text: #e6edf3;         /* 主文字 - 柔和白 */
+  --user-muted: #7d8590;         /* 次要文字 - 中灰 */
+
+  /* 边框 - 低饱和 */
+  --user-border: #30363d;       /* 边框 */
+  --user-border-soft: #21262d;   /* 软边框 */
+
+  /* 阴影 - 深色专用 */
+  --user-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --user-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  /* 应用背景 */
+  background-color: var(--user-bg);
+  color: var(--user-text);
+}
+
+/* ==================== 基础样式 ==================== */
+
+html.dark body {
+  background-color: var(--user-bg);
+  color: var(--user-text);
+}
+
+/* ==================== Element Plus 组件深色主题 ==================== */
+
+/* 按钮 */
+html.dark .el-button {
+  background-color: var(--user-card);
+  border-color: var(--user-border);
+  color: var(--user-text);
+}
+
+html.dark .el-button:hover {
+  background-color: var(--user-card-hover);
+  color: var(--user-primary-light);
+  border-color: var(--user-primary);
+}
+
+html.dark .el-button--primary {
+  background: linear-gradient(135deg, var(--user-primary) 0%, var(--user-primary-light) 100%);
+  border-color: transparent;
+  color: #fff;
+}
+
+html.dark .el-button--primary:hover {
+  background: linear-gradient(135deg, var(--user-primary-light) 0%, var(--user-primary) 100%);
+  opacity: 0.92;
+}
+
+/* 输入框 */
+html.dark .el-input__wrapper {
+  background-color: var(--user-card);
+  box-shadow: 0 0 0 1px var(--user-border) inset;
+}
+
+html.dark .el-input__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--user-border-soft) inset;
+}
+
+html.dark .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--user-primary) inset, 0 0 0 4px var(--user-primary-soft);
+}
+
+html.dark .el-input__inner {
+  color: var(--user-text);
+}
+
+html.dark .el-input__inner::placeholder {
+  color: var(--user-muted);
+}
+
+/* 选择器下拉 */
+html.dark .el-select-dropdown {
+  background-color: var(--user-card);
+  border: 1px solid var(--user-border);
+  box-shadow: var(--user-shadow-lg);
+}
+
+html.dark .el-select-dropdown__item {
+  color: var(--user-text);
+}
+
+html.dark .el-select-dropdown__item:hover {
+  background-color: var(--user-card-hover);
+}
+
+html.dark .el-select-dropdown__item.is-selected {
+  color: var(--user-primary);
+  font-weight: 600;
+}
+
+/* 单选按钮组 */
+html.dark .el-radio-button__inner {
+  background-color: var(--user-card);
+  border-color: var(--user-border);
+  color: var(--user-muted);
+  transition: all 0.2s ease;
+}
+
+html.dark .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+  background-color: var(--user-primary);
+  border-color: var(--user-primary);
+  color: #fff;
+}
+
+/* 对话框 */
+html.dark .el-dialog {
+  background-color: var(--user-card);
+  border: 1px solid var(--user-border);
+  box-shadow: var(--user-shadow-lg);
+}
+
+html.dark .el-dialog__header {
+  border-bottom: 1px solid var(--user-border-soft);
+}
+
+html.dark .el-dialog__title {
+  color: var(--user-text);
+}
+
+html.dark .el-dialog__body {
+  color: var(--user-text);
+}
+
+/* 消息确认框 */
+html.dark .el-message-box {
+  background-color: var(--user-card);
+  border: 1px solid var(--user-border);
+  box-shadow: var(--user-shadow-lg);
+}
+
+html.dark .el-message-box__title {
+  color: var(--user-text);
+}
+
+html.dark .el-message-box__content {
+  color: var(--user-muted);
+}
+
+/* 消息提示 */
+html.dark .el-message {
+  background-color: var(--user-card);
+  border: 1px solid var(--user-border);
+  box-shadow: var(--user-shadow-lg);
+}
+
+html.dark .el-message__content {
+  color: var(--user-text);
+}
+
+/* 表格 */
+html.dark .el-table {
+  --el-table-bg-color: var(--user-card);
+  --el-table-tr-bg-color: var(--user-card);
+  --el-table-header-bg-color: #0d1117;
+  --el-table-border-color: var(--user-border);
+  --el-table-text-color: var(--user-text);
+  --el-table-header-text-color: var(--user-muted);
+  --el-table-row-hover-bg-color: var(--user-card-hover);
+}
+
+html.dark .el-table--striped .el-table__body tr.el-table__row--striped td {
+  background-color: #121820;
+}
+
+html.dark .el-table th.el-table__cell {
+  background-color: #0d1117;
+  border-bottom-color: var(--user-border);
+}
+
+html.dark .el-table td.el-table__cell {
+  border-bottom-color: var(--user-border-soft);
+}
+
+html.dark .el-table::before {
+  background-color: var(--user-border-soft);
+}
+
+/* 标签 */
+html.dark .el-tag {
+  background-color: #21262d;
+  border-color: var(--user-border);
+  color: var(--user-text);
+}
+
+html.dark .el-tag--success {
+  background-color: rgba(46, 160, 67, 0.15);
+  border-color: rgba(46, 160, 67, 0.3);
+  color: #2ea043;
+}
+
+html.dark .el-tag--danger {
+  background-color: rgba(248, 81, 73, 0.15);
+  border-color: rgba(248, 81, 73, 0.3);
+  color: #f85149;
+}
+
+html.dark .el-tag--warning {
+  background-color: rgba(210, 153, 34, 0.15);
+  border-color: rgba(210, 153, 34, 0.3);
+  color: #d29922;
+}
+
+html.dark .el-tag--info {
+  background-color: rgba(88, 166, 255, 0.15);
+  border-color: rgba(88, 166, 255, 0.3);
+  color: #58a6ff;
+}
+
+/* 分页 */
+html.dark .el-pagination button {
+  background-color: var(--user-card);
+  color: var(--user-text);
+  border-color: var(--user-border);
+}
+
+html.dark .el-pagination button:hover {
+  color: var(--user-primary);
+}
+
+html.dark .el-pager li {
+  background-color: transparent;
+  color: var(--user-text);
+  border-radius: 6px;
+}
+
+html.dark .el-pager li:hover {
+  background-color: var(--user-card-hover);
+  color: var(--user-primary);
+}
+
+html.dark .el-pager li.is-active {
+  background-color: var(--user-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 日期选择器 */
+html.dark .el-picker-panel {
+  background-color: var(--user-card);
+  border: 1px solid var(--user-border);
+  box-shadow: var(--user-shadow-lg);
+}
+
+html.dark .el-picker-panel__header-label {
+  color: var(--user-text);
+}
+
+html.dark .el-picker-panel__icon-btn {
+  color: var(--user-muted);
+}
+
+html.dark .el-picker-panel__icon-btn:hover {
+  color: var(--user-primary);
+}
+
+html.dark .el-date-table th {
+  color: var(--user-muted);
+  border-bottom-color: var(--user-border-soft);
+}
+
+html.dark .el-date-table td .el-date-table-cell__text {
+  color: var(--user-text);
+}
+
+html.dark .el-date-table td.today .el-date-table-cell__text {
+  color: var(--user-primary);
+  font-weight: 700;
+}
+
+html.dark .el-date-table td.available:hover .el-date-table-cell__text {
+  background-color: var(--user-card-hover);
+}
+
+html.dark .el-date-table td.current:not(.disabled) .el-date-table-cell__text {
+  background-color: var(--user-primary);
+  color: #fff;
+}
+
+html.dark .el-range-input {
+  color: var(--user-text);
+  background-color: transparent;
+}
+
+html.dark .el-range-separator {
+  color: var(--user-muted);
+}
+
+/* 空状态 */
+html.dark .el-empty__description {
+  color: var(--user-muted);
+}
+
+/* ==================== 用户端页面深色主题 ==================== */
+
+/* 整体布局 */
+html.dark .user-app {
+  background: var(--user-bg);
+  color: var(--user-text);
+}
+
+html.dark .user-app-header {
+  background: linear-gradient(180deg, #161b22 0%, var(--user-bg) 100%);
+  border-bottom-color: var(--user-border);
+}
+
+/* 卡片 */
+html.dark .surface {
+  background: var(--user-card);
+  border: 1px solid var(--user-border);
+  box-shadow: var(--user-shadow);
+}
+
+/* 文字 */
+html.dark .page-title {
+  color: var(--user-text);
+}
+
+html.dark .page-sub {
+  color: var(--user-muted);
+}
+
+/* 底部导航 */
+html.dark .user-tabbar {
+  background: rgba(22, 27, 34, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--user-border);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .tab-item {
+  color: var(--user-muted);
+}
+
+html.dark .tab-item.active {
+  color: var(--user-primary-light);
+  background: var(--user-primary-soft);
+}
+
+/* 首页 - 进度卡片 */
+html.dark .percentage {
+  color: var(--user-primary-light);
+}
+
+html.dark .label,
+html.dark .progress-stats {
+  color: var(--user-muted);
+}
+
+html.dark .card-title {
+  color: var(--user-text);
+}
+
+/* 计划项 */
+html.dark .plan-item {
+  background: #121820;
+  border-color: var(--user-border-soft);
+}
+
+html.dark .plan-item:hover {
+  background: #1a2330;
+}
+
+html.dark .plan-text {
+  color: var(--user-text);
+}
+
+html.dark .plan-item.completed .plan-text {
+  color: var(--user-muted);
+}
+
+html.dark .plan-reminder {
+  color: var(--user-primary-light);
+}
+
+/* 浮动按钮 */
+html.dark .fab {
+  background: linear-gradient(145deg, var(--user-primary) 0%, var(--user-primary-light) 100%) !important;
+  box-shadow: 0 8px 28px rgba(77, 181, 165, 0.45);
+  border: none !important;
+}
+
+/* 个人中心 - 统计卡片 */
+html.dark .stat {
+  background: var(--user-card);
+  border-color: var(--user-border);
+  box-shadow: var(--user-shadow);
+}
+
+html.dark .stat-value {
+  color: var(--user-primary-light);
+}
+
+html.dark .stat-label {
+  color: var(--user-muted);
+}
+
+/* 个人中心 - 单元格 */
+html.dark .cell {
+  border-top-color: var(--user-border-soft);
+}
+
+html.dark .cell-label {
+  color: var(--user-text);
+}
+
+html.dark .cell-value {
+  color: var(--user-muted);
+}
+
+html.dark .section-title {
+  color: var(--user-muted);
+}
+
+html.dark .hero-name {
+  color: var(--user-text);
+}
+
+html.dark .hero-sub {
+  color: var(--user-muted);
+}
+
+html.dark .logout-btn {
+  background: var(--user-card);
+  border-color: rgba(248, 81, 73, 0.35);
+  color: #f85149;
+  box-shadow: var(--user-shadow);
+}
+
+html.dark .logout-btn:hover {
+  background: rgba(248, 81, 73, 0.1);
+}
+
+/* ==================== 历史记录页面 ==================== */
+
+html.dark .history-item {
+  background: var(--user-card);
+  border-color: var(--user-border);
+}
+
+html.dark .history-item:hover {
+  background: var(--user-card-hover);
+}
+
+html.dark .date {
+  color: var(--user-text);
+}
+
+html.dark .rate {
+  color: var(--user-primary-light);
+}
+
+html.dark .plan-count {
+  color: var(--user-muted);
+}
+
+html.dark .chev {
+  color: var(--user-muted);
+}
+
+html.dark .month-label {
+  color: var(--user-muted);
+}
+
+/* 历史详情 */
+html.dark .detail-item {
+  background: #121820;
+}
+
+html.dark .detail-item.completed span {
+  color: var(--user-muted);
+}
+
+/* ==================== 管理后台深色主题 ==================== */
+
+html.dark .admin-layout {
+  background: var(--user-bg);
+}
+
+html.dark .admin-sidebar {
+  background: #010409;
+  border-color: var(--user-border);
+}
+
+html.dark .admin-logo {
+  color: var(--user-text);
+}
+
+html.dark .admin-menu-item {
+  color: var(--user-muted);
+}
+
+html.dark .admin-menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #bdc4cc;
+}
+
+html.dark .admin-menu-item.active {
+  background: var(--user-primary-soft);
+  color: var(--user-primary-light);
+  border-right: 3px solid var(--user-primary);
+}
+
+html.dark .admin-header {
+  background: var(--user-card);
+  border-color: var(--user-border);
+}
+
+html.dark .admin-content {
+  background: var(--user-bg);
+}
+
+html.dark .admin-page-title {
+  color: var(--user-text);
+}
+
+html.dark .page-heading {
+  color: var(--user-text);
+}
+
+html.dark .breadcrumb :deep(.el-breadcrumb__inner) {
+  color: var(--user-muted);
+}
+
+html.dark .breadcrumb :deep(.el-breadcrumb__item:last-child .el-breadcrumb__inner) {
+  color: var(--user-text);
+}
+
+html.dark .brand-title {
+  color: var(--user-text);
+}
+
+html.dark .brand-sub {
+  color: var(--user-muted);
+}
+
+html.dark .desktop-nick {
+  color: var(--user-muted);
+}
+
+/* ==================== 工具栏按钮组 ==================== */
+
+html.dark .range-group :deep(.el-radio-button__inner) {
+  background: var(--user-card);
+  border-color: var(--user-border);
+  color: var(--user-muted);
+}
+
+html.dark .range-group :deep(.el-radio-button__orig-radio:checked + .el-radio-button__inner) {
+  background: var(--user-primary);
+  border-color: var(--user-primary);
+  color: #fff;
+}
+
+/* ==================== 过渡动画 ==================== */
+
+* {
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
