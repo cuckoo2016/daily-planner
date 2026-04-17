@@ -25,7 +25,6 @@
 daily-planner/
 ├── frontend/          # 前端项目
 ├── backend/           # 后端项目
-├── scripts/           # Node.js 启动脚本（备用）
 ├── start.sh           # 启动服务脚本
 ├── stop.sh            # 停止服务脚本
 ├── package.json       # 根目录配置
